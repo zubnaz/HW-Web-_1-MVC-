@@ -1,7 +1,7 @@
-﻿@model DataInfo.Data.Entitys.Auto
+﻿@model HW_Web__1_MVC_.Model.CreateAutoModel;
 <div><h2>Add Car</h2></div>
 <div class="AddCar">
-    <form asp-action="AddCar" method="post">
+    <form asp-action="AddCar" enctype="multipart/form-data" method="post">
         <div>
             <input asp-for="Mark" type="text" placeholder="Mark" />
             <span asp-validation-for="Mark"></span>
@@ -25,7 +25,7 @@
             <span asp-validation-for="ColorId"></span>
         </div>
         <div>
-            <input asp-for="Image" type="url" placeholder="Image (url)" />
+            <input asp-for="Image" type="file" />
         </div>
         <div class="buttons-addPage">
             <a asp-action="Index">Back</a>

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using HW_Web__1_MVC_.Model;
+using HW_Web__1_MVC_.Helpers;
 
 namespace HW_Web__1_MVC_.Controllers
 {
@@ -11,9 +13,12 @@ namespace HW_Web__1_MVC_.Controllers
     public class AutoController : Controller
     {
         public readonly _AutoDbContext adc;
-        public AutoController(_AutoDbContext adc)
+        private readonly IFileServices fileServices;
+
+        public AutoController(_AutoDbContext adc,IFileServices fileServices)
         {
             this.adc = adc;
+            this.fileServices = fileServices;
         }
         public void Colors()
         {
@@ -30,16 +35,26 @@ namespace HW_Web__1_MVC_.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult AddCar(Auto auto)
+        public async Task<IActionResult> AddCar(CreateAutoModel autoCreate)
         {
-            if (!ModelState.IsValid) { Colors(); return View(auto); }
+            if (!ModelState.IsValid) { Colors(); return View(autoCreate); }
 
-
+            var auto = new Auto()
+            {
+                Mark = autoCreate.Mark,
+                Model = autoCreate.Model,
+                Price = autoCreate.Price,
+                Year = autoCreate.Year,
+                ColorId = autoCreate.ColorId,
+                Image = await fileServices.SaveAutoImage(autoCreate.Image)
+            };
+            
             adc.Autos.Add(auto);
             adc.SaveChanges();
 
             return RedirectToAction("Index");
         }
+        [AllowAnonymous]
         public IActionResult Information(int id, string controllerName)
         {
             this.ViewBag.String = controllerName;

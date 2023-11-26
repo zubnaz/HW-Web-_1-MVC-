@@ -3,6 +3,7 @@ using DataInfo.Data.Entitys;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using HW_Web__1_MVC_.Helpers;
+using HW_Web__1_MVC_.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
@@ -24,6 +25,8 @@ builder.Services.AddIdentity<User, IdentityRole>()
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblies(AppDomain.CurrentDomain.GetAssemblies());
 
+//builder.Services.AddScoped<IFileServices, LocalFileService>();
+builder.Services.AddScoped<IFileServices, AzureFileService>();
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromDays(1);
@@ -41,6 +44,7 @@ using (IServiceScope scope = app.Services.CreateScope())
 
     SeedExtensions.SeedAdmin(serviceProvider).Wait();
 }
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
