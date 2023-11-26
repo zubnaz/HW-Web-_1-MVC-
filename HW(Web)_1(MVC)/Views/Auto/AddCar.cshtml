@@ -1,0 +1,37 @@
+﻿@model DataInfo.Data.Entitys.Auto
+<div><h2>Add Car</h2></div>
+<div class="AddCar">
+    <form asp-action="AddCar" method="post">
+        <div>
+            <input asp-for="Mark" type="text" placeholder="Mark" />
+            <span asp-validation-for="Mark"></span>
+        </div>
+        <div>
+            <input asp-for="Model" type="text" placeholder="Model" />
+            <span asp-validation-for="Model"></span>
+        </div>
+        <div>
+            <input asp-for="Price" type="number" placeholder="Price" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div>
+            <input asp-for="Year" type="number" placeholder="Year" />
+            <span asp-validation-for="Year"></span>
+        </div>
+        <div>
+            <select asp-for="ColorId" asp-items="@ViewBag.Colors">
+                <option disabled selected>Select Color</option>
+            </select>
+            <span asp-validation-for="ColorId"></span>
+        </div>
+        <div>
+            <input asp-for="Image" type="url" placeholder="Image (url)" />
+        </div>
+        <div class="buttons-addPage">
+            <a asp-action="Index">Back</a>
+            <button type="submit">Create</button>
+        </div>
+
+    </form>
+</div>
+

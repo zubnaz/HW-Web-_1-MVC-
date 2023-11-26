@@ -1,0 +1,55 @@
+﻿@using DataInfo.Data.Entitys;
+@using Microsoft.AspNetCore.Identity;
+@model DataInfo.Data._AutoDbContext;
+@inject SignInManager<User> SignInManager
+<div class="homePage">
+    @foreach (var auto in Model.Autos)
+    {
+        /*<div>*/
+        <div class="flex">
+            <div>@auto.Mark</div>
+            <div class="img">
+                <img src="@auto.Image" />
+            </div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div>
+                    <a asp-controller="Orders" asp-action="Buy" asp-route-id="@auto.Id" asp-route-controllerName="Home">Buy</a>
+            </div>
+            }
+            <div>
+
+                <a asp-controller="Auto" asp-action="Information" asp-route-id="@auto.Id" asp-route-controllerName="Home">Information</a>
+            </div>
+            <div>
+                @if (((List<int>)@ViewBag.Ids) != null)
+                {
+                    @if (((List<int>)@ViewBag?.Ids).Contains(auto.Id))
+                    {
+                        @foreach (var item in (List<int>)@ViewBag.Ids)
+                        {
+                            if (item == auto.Id)
+                            {
+                                <a asp-controller="Favorites" asp-action="RemoveFromFavorites" asp-route-id="@auto.Id" asp-route-controllerName="Home" class="removeFromFavorites">Remove from favorites</a>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <a asp-controller="Favorites" asp-action="AddToFavorite" asp-route-id="@auto.Id">To favorites</a>
+                    }
+                }
+                else
+                {
+                    <a asp-controller="Favorites" asp-action="AddToFavorite" asp-route-id="@auto.Id">To favorites</a>
+                }
+
+
+
+            </div>
+        </div>
+        /*</div>*/
+
+
+    }
+</div>

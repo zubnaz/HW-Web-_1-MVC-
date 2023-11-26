@@ -1,0 +1,19 @@
+﻿@using System.Linq;
+@model DataInfo.Data.Entitys.Auto
+
+<div class="information">
+    <img src="@Model.Image" />
+    <div class="information-grid">
+        <div>Mark</div>
+        <div>@Model.Mark</div>
+        <div>Model</div>
+        <div>@Model.Model</div>
+        <div>Year</div>
+        <div>@Model.Year</div>
+        <div>Price</div>
+        <div>@Model.Price</div>
+        <div>Color</div>
+        <div>@Model.Color.ColorName</div>
+    </div>
+    <a asp-controller="@ViewBag.String" asp-action="Index">Back</a>
+</div>

@@ -1,0 +1,9 @@
+﻿namespace HW_Web__1_MVC_.Model
+{
+    public class ErrorViewModel
+    {
+        public string RequestId { get; set; }
+
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+}

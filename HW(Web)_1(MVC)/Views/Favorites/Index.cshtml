@@ -1,0 +1,30 @@
+﻿@using DataInfo.Data.Entitys;
+@using Microsoft.AspNetCore.Identity;
+@model List<DataInfo.Data.Entitys.Auto>;
+@inject SignInManager<User> SignInManager
+<div class="Favorites">
+    @foreach (var auto in Model)
+    {
+        <div class="flex">
+            <div>@auto.Mark</div>
+            <div class="img">
+                <img src="@auto.Image" />
+            </div>
+            
+                @if (SignInManager.IsSignedIn(User))
+                {
+                <div>
+                    <a asp-controller="Orders" asp-action="Buy" asp-route-id="@auto.Id" asp-route-controllerName="Favorites">Buy</a>
+                </div>
+                }
+                
+            
+            <div>
+                <a asp-controller="Auto" asp-action="Information" asp-route-id="@auto.Id" asp-route-controllerName="Favorites">Information</a>
+            </div>
+            <div>
+                <a asp-action="RemoveFromFavorites" asp-route-id="@auto.Id" asp-route-controllerName="Favorites">Remove</a>
+            </div>
+        </div>
+    }
+</div>

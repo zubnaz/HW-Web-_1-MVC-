@@ -1,0 +1,18 @@
+﻿@model List<DataInfo.Data.Entitys.Order>;
+
+<div class="Orders">
+    @foreach (var auto in Model)
+    {
+        <div class="flex">
+            @auto.Auto.Mark
+            
+            <img src="@auto.Auto.Image" />
+            
+            @auto.Date
+
+            
+            <a asp-controller="Auto" asp-action="Information" asp-route-id="@auto.AutoId" asp-route-controllerName="Orders">Information</a>
+            
+        </div>
+    }
+</div>

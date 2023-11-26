@@ -1,0 +1,336 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #151234;
+}
+
+header nav {
+    background-color: #151234;
+}
+
+    header nav a {
+        color: white;
+    }
+
+
+div.container main {
+    width: 100%;
+    height: 100%;
+}
+
+    div.container main div.cars {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+        div.container main div.cars div.addCar-cars {
+            width: 100%;
+            border: 1px solid white;
+            overflow-y: scroll;
+        }
+
+            div.container main div.cars div.addCar-cars table {
+                width: 100%;
+                height: 100%;
+                border-collapse: collapse;
+                text-align: center;
+                font-size: 30px;
+                margin-bottom: 30px;
+                color: white;
+            }
+
+            div.container main div.cars div.addCar-cars::-webkit-scrollbar {
+                border: 1px solid white;
+                margin-left: 10px;
+                background-color: #151234;
+                width: 30px;
+            }
+
+        div.container main div.cars table tr td {
+            padding: 30px;
+            border: 1px solid white;
+            font-weight: 500;
+        }
+
+            div.container main div.cars table tr td:last-child {
+                display: flex;
+                flex-direction: column;
+                padding: 0px;
+            }
+
+                div.container main div.cars table tr td:last-child div {
+                    flex-grow: 1;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                    div.container main div.cars table tr td:last-child div a {
+                        flex-grow: 1;
+                        border-radius: 0px;
+                        height: 100%;
+                        width: 100%;
+                        font-size: 30px;
+                        padding: 10px;
+                        margin-bottom: 0px;
+                        margin-top: 0px;
+                    }
+
+
+    div.container main a, div.container main form div.buttons-addPage button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #151234;
+        border-radius: 30px;
+        border: none;
+        border: 1px solid white;
+        width: 30%;
+        height: 10%;
+        outline: none;
+        align-self: center;
+        text-decoration: none;
+        font-size: 30px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    div.container main form span {
+        color: red;
+        font-size: 20px;
+    }
+
+    div.container main form div.buttons-addPage {
+        display: flex;
+        column-gap: 10px;
+    }
+
+        div.container main form div.buttons-addPage button {
+            flex-grow: 1;
+        }
+
+        div.container main form div.buttons-addPage a {
+            flex-grow: 1;
+        }
+
+    div.container main a:hover, div.container main button:hover {
+        box-shadow: white 0px 5px 15px;
+        text-shadow: 3px 3px 10px #fff, -2px 1px 20px #fff;
+        color: white;
+    }
+
+    div.container main form div.buttons-addPage a, div.container main form div.buttons-addPage button {
+        width: 40%;
+    }
+
+    div.container main form input::placeholder {
+        text-align: left;
+        color: white;
+    }
+
+    div.container main form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+        padding-top: 50px;
+    }
+
+        div.container main form div input, div.container main form div select {
+            width: 100%;
+            height: 10%;
+            font-size: 30px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            background-color: #151234;
+            border: 1px solid white;
+            padding-left: 30px;
+            padding-right: 30px;
+            color: white;
+            transition: all 1s;
+        }
+
+    div.container main div h2 {
+        font-size: 50px;
+        color: white;
+        text-align: center;
+    }
+
+    div.container main form div input:focus, div.container main form div select:focus {
+        box-shadow: white 0px 5px 15px;
+    }
+
+    div.container main div.information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        border: 1px solid white;
+        padding: 10px;
+    }
+
+        div.container main div.information img {
+            width: 30%;
+            height: 30%;
+            margin-bottom: 10px;
+        }
+
+        div.container main div.information div.information-grid {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            grid-template-columns: 30% 70%;
+        }
+
+            div.container main div.information div.information-grid div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid white;
+                font-size: 30px;
+                color: white;
+            }
+
+                div.container main div.information div.information-grid div:nth-child(odd) {
+                    font-size: 50px;
+                }
+
+    div.container main div.homePage, div.container main div.Favorites {
+        display: flex;
+        row-gap: 30px;
+        column-gap: 30px;
+        flex-wrap: wrap;
+    }
+        /* div.container main div.homePage > div {
+        display: inline-block;
+        width: 30%;
+        padding: 10px;
+        height: 100%;
+    }*/
+        div.container main div.homePage div.flex, div.container main div.Favorites div.flex {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            width: 25%;
+            border: 1px solid black;
+            padding: 30px;
+        }
+
+            div.container main div.homePage div.flex div:first-child, div.container main div.Favorites div.flex div:first-child {
+                text-align: center;
+                color: white;
+                font-size: 30px;
+            }
+
+            div.container main div.homePage div.flex div.img, div.container main div.Favorites div.flex div.img {
+                height: 30%;
+                width: 100%;
+            }
+
+                div.container main div.homePage div.flex div.img img, div.container main div.Favorites div.flex div.img img {
+                    height: 100%;
+                    width: 100%;
+                }
+
+            div.container main div.homePage div.flex div a, div.container main div.Favorites div.flex div a {
+                width: 100%;
+                color: white;
+                height: 50%;
+                overflow: hidden;
+            }
+
+                div.container main div.homePage div.flex div a.removeFromFavorites {
+                    font-size: 15px;
+                }
+                div.Orders{
+                    display:flex;
+                    column-gap:15px;
+                }
+div.Orders div.flex {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 21px;
+    align-items: center;
+}
+    div.Orders  div.flex a {
+        width: 90%;
+        height: 20%;
+    }
+    div.Orders div.flex img {
+        width: 100%;
+        height: 50%;
+    }
+
+
+div.row {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+div.row h1{
+    text-align:center;
+}
+
+    div.row input.form-check-input {
+        height: 30px;
+    }
+
+div.col-md-4 p {
+    width: 100%;
+}
+div.col-md-4 p a{
+    width:100%;
+}
+.navbar-brand, .nav-link {
+    color: white;
+}
+
+
+
+
