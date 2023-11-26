@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-string path = builder.Configuration.GetConnectionString("Connect");
+string path = builder.Configuration.GetConnectionString("ConnectAzure");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

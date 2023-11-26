@@ -24,7 +24,7 @@ namespace DataInfo.Data
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-H42B83O\\SQLEXPRESS;Initial Catalog=AutoDataBase_MVC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            optionsBuilder.UseSqlServer("Server=tcp:nazarko-server.database.windows.net,1433;Initial Catalog=AutoDataBase;Persist Security Info=False;User ID=Nazariy;Password=Nazar345;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
